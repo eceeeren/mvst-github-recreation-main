@@ -1,5 +1,6 @@
-import { Pagehead, Text, Link, Box, Label } from '@primer/react';
+import { Pagehead, Text, Link, Box, Label, Button } from '@primer/react';
 import { PageHeader } from '@primer/react/drafts'
+import { StarIcon } from '@primer/octicons-react';
 
 
 export default function RepositoryItem(props) {
@@ -16,6 +17,12 @@ export default function RepositoryItem(props) {
         </Box> 
         <Box sx={{pr: 3, mt: 1 }}>
         <Label variant="secondary">Public</Label>
+        </Box>
+        <Box sx={{pr: 3, mt: 1 }}>
+        <Button>
+        <StarIcon size={16}/> 
+        <Text sx={{fontSize: 1, fontWeight: 'bold'}}> Star</Text>
+        </Button>
         </Box>
     </Box>
     </PageHeader.TitleArea>

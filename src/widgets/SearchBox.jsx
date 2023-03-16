@@ -1,6 +1,7 @@
-import { TextInput, Box } from '@primer/react';
+import { TextInput, Box, Button, Text } from '@primer/react';
 import React from 'react';
 import SpecializedSelectPanel from './SpecializedSelectPanel';
+import { RepoIcon } from '@primer/octicons-react';
 
 const typeItems = [
     {text: 'All', id: 1},
@@ -33,6 +34,12 @@ export default function SearchBox() {
     </Box>
     <Box sx={{pl: 1}}>
     <SpecializedSelectPanel items={languageItems} />
+    </Box>
+    <Box sx={{pl: 1}}>
+    <Button sx={{backgroundColor: "rgb(45, 164, 58)"}}>
+    <Text sx={{fontSize: 1, fontWeight: 'bold', color: "white"}}> 
+    <RepoIcon size={16}  /> Add</Text>
+    </Button>
     </Box>
     </Box>
   );

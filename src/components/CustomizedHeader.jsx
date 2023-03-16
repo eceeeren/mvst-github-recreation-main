@@ -3,7 +3,7 @@ import { Header } from '@primer/react';
 
 export default function CustomizedHeader() {
   return (
-    <Header>
+    <Header sx={{mb: 3}}>
   <Header.Item>
     <Header.Link href="#" fontSize={2}>
       <span>GitHub</span>

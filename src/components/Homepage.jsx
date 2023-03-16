@@ -1,16 +1,12 @@
 import { BookIcon, RepoIcon, ProjectIcon } from '@primer/octicons-react';
 import { PageLayout, CounterLabel } from '@primer/react';
 import { UnderlineNav } from '@primer/react/drafts'
-import CustomizedHeader from './CustomizedHeader';
 import ProfileCard from './ProfileCard';
 import RepositoryList from './RepositoryList'
 
 export default function Homepage() {
   return (
-    <PageLayout>
-    <PageLayout.Header>
-        <CustomizedHeader/>
-    </PageLayout.Header>
+    <PageLayout padding="none" rowGap="none" columnGap="none">
     <PageLayout.Pane position="start" hidden={{narrow: true}}>
         <ProfileCard/>
     </PageLayout.Pane>
