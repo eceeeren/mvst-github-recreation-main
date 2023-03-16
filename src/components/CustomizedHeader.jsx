@@ -1,4 +1,4 @@
-import {Header} from '@primer/react'
+import { Header } from '@primer/react';
 
 
 export default function CustomizedHeader() {

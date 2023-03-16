@@ -1,21 +1,26 @@
-import {PageLayout} from '@primer/react';
+import { BookIcon, RepoIcon, ProjectIcon } from '@primer/octicons-react';
+import { PageLayout } from '@primer/react';
+import { UnderlineNav } from '@primer/react/drafts'
 import CustomizedHeader from './CustomizedHeader';
+import ProfileCard from './ProfileCard';
 
 export default function Homepage() {
   return (
     <PageLayout>
     <PageLayout.Header>
         <CustomizedHeader/>
+        <UnderlineNav aria-label="Repository">
+        <UnderlineNav.Item icon={BookIcon} >Overview</UnderlineNav.Item>
+        <UnderlineNav.Item icon={RepoIcon} aria-current="page">Repositories</UnderlineNav.Item>
+        <UnderlineNav.Item icon={ProjectIcon}>Projects</UnderlineNav.Item>
+      </UnderlineNav>
     </PageLayout.Header>
-    <PageLayout.Content>
-        Hello
-    </PageLayout.Content>
     <PageLayout.Pane position="start" hidden={{narrow: true}}>
-        Hello
+        <ProfileCard/>
     </PageLayout.Pane>
-    <PageLayout.Footer>
-        Hello
-    </PageLayout.Footer>
+    <PageLayout.Content>
+        A
+    </PageLayout.Content>
     </PageLayout>
   );
 }
