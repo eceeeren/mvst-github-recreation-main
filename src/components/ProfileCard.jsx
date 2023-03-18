@@ -23,7 +23,6 @@ export default function ProfileCard() {
     axios
           .get(`https://api.github.com/users/${username}`)
           .then((response) => {
-            console.log(response);
             setAvatarUrl(response.data.avatar_url);
             setFullName(response.data.name);
             setFollowing(response.data.following);

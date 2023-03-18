@@ -1,22 +1,34 @@
-import { BookIcon, RepoIcon, ProjectIcon } from '@primer/octicons-react';
-import { PageLayout, CounterLabel } from '@primer/react';
-import { UnderlineNav } from '@primer/react/drafts'
+import { useState } from "react";
+import { PageLayout } from '@primer/react';
 import ProfileCard from './ProfileCard';
-import RepositoryList from './RepositoryList'
+import RepositoryList from './RepositoryList';
+import SpecializedUnderlineNav from './SpecializedUnderlineNav';
+import axios from "axios";
+
 
 export default function Homepage() {
+
+  const username = "eceeeren";
+  const [repos, setRepos] = useState([]);
+
+  try {
+    axios
+          .get(`https://api.github.com/users/${username}/repos`)
+          .then((response) => {
+            setRepos(response.data)
+          });
+  } catch(error) {
+    console.log(error);
+  }
+
   return (
     <PageLayout padding="none" rowGap="none" columnGap="none">
     <PageLayout.Pane position="start" hidden={{narrow: true}}>
         <ProfileCard/>
     </PageLayout.Pane>
     <PageLayout.Content>
-    <UnderlineNav aria-label="Repository" sx={{ mb:3 }}>
-        <UnderlineNav.Item icon={BookIcon}>Overview</UnderlineNav.Item>
-        <UnderlineNav.Item icon={RepoIcon}>Repositories <CounterLabel scheme="primary">13</CounterLabel></UnderlineNav.Item>
-        <UnderlineNav.Item icon={ProjectIcon}>Projects</UnderlineNav.Item>
-      </UnderlineNav>
-        <RepositoryList />
+        <SpecializedUnderlineNav size={repos.length} />
+        <RepositoryList repos={repos} />
     </PageLayout.Content>
     </PageLayout>
   );

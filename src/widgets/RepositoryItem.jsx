@@ -12,11 +12,14 @@ export default function RepositoryItem(props) {
     <Box sx={{display: 'flex'}}>
         <Box sx={{pr: 3}}> 
         <Link href="https://github.com">
-        <PageHeader.Title>add-pageheader-docs</PageHeader.Title>
+        <PageHeader.Title>{props.repo.name}</PageHeader.Title>
         </Link>
         </Box> 
         <Box sx={{pr: 3, mt: 1 }}>
-        <Label variant="secondary">Public</Label>
+            {props.private ? 
+            (<Label variant="secondary">Private</Label>) : 
+            (<Label variant="secondary">Public</Label>)
+            }
         </Box>
         <Box sx={{pr: 3, mt: 1 }}>
         <Button>
@@ -33,7 +36,7 @@ export default function RepositoryItem(props) {
     </PageHeader.Description>
     <PageHeader.Description>
         <Text sx={{fontSize: 2, color: 'fg.muted'}}>
-        Some description 
+        {props.repo.description}
         </Text>
     </PageHeader.Description>
     <PageHeader.Description>
@@ -47,10 +50,10 @@ export default function RepositoryItem(props) {
         borderRadius={10}
         /> 
         <Text as="p" sx={{fontSize: 1, color: 'fg.muted', mr:5 }}>
-        Typescript 
+        {props.repo.language} 
         </Text>
         <Text sx={{fontSize: 1, color: 'fg.muted'}}>
-        updated 3 days ago
+        updated at {props.repo.updated_at} 
         </Text>
     </PageHeader.Description>
     </Pagehead>
