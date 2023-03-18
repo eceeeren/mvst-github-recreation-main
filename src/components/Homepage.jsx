@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PageLayout } from '@primer/react';
 import ProfileCard from './ProfileCard';
 import RepositoryList from './RepositoryList';
@@ -11,6 +11,7 @@ export default function Homepage() {
   const username = "eceeeren";
   const [repos, setRepos] = useState([]);
 
+  useEffect(() => {
   try {
     axios
           .get(`https://api.github.com/users/${username}/repos`)
@@ -20,6 +21,7 @@ export default function Homepage() {
   } catch(error) {
     console.log(error);
   }
+  }, []);
 
   return (
     <PageLayout padding="none" rowGap="none" columnGap="none">

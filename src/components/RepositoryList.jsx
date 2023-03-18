@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RepositoryItem from '../widgets/RepositoryItem';
 import { TextInput, Box, Button, Text } from '@primer/react';
 import SpecializedSelectPanel from '../widgets/SpecializedSelectPanel';
@@ -7,8 +7,17 @@ import { typeItems, languageItems } from "../data/dropdownItems";
 
 export default function RepositoryList(props) {
 
-  const repos = props.repos;
-  const [filterList, setFilterList] = useState(repos);
+  const [repos, setRepos] = useState([]);
+  const [filterList, setFilterList] = useState([]);
+
+  useEffect(() => {
+    try {
+      setRepos(props.repos);
+      setFilterList(props.repos);
+    } catch (err) {
+      console.log(err);
+    }
+  }, [props.repos]);
 
     const handleSearch = (event) => {
 
@@ -47,7 +56,7 @@ export default function RepositoryList(props) {
     </Box>
     </Box>
     {filterList.map((repo) => (
-      <RepositoryItem repo={repo} />
+      <RepositoryItem key={repo.name} repo={repo} />
     ))}
     </>
   );

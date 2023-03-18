@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Avatar, Heading, Text, Button, Box, Pagehead } from '@primer/react';
 import { 
   PeopleIcon, 
@@ -19,6 +19,7 @@ export default function ProfileCard() {
   const [company, setCompany] = useState("");
   const [location, setLocation] = useState("");
   
+  useEffect(() => {
   try {
     axios
           .get(`https://api.github.com/users/${username}`)
@@ -33,6 +34,7 @@ export default function ProfileCard() {
   } catch(error) {
     console.log(error);
   }
+  }, []);
 
   return (
     <>
