@@ -26,7 +26,7 @@ export default function Homepage() {
     <PageLayout.Pane position="start" hidden={{narrow: true}}>
         <ProfileCard/>
     </PageLayout.Pane>
-    <PageLayout.Content>
+    <PageLayout.Content sx={{ml:5}}>
         <SpecializedUnderlineNav size={repos.length} />
         <RepositoryList repos={repos} />
     </PageLayout.Content>

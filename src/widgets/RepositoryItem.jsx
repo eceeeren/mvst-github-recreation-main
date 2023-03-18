@@ -1,14 +1,15 @@
 import { Pagehead, Text, Link, Box, Label, Button } from '@primer/react';
 import { PageHeader } from '@primer/react/drafts'
 import { StarIcon } from '@primer/octicons-react';
+import colors from '../data/github-lang-colors';
 
 
 export default function RepositoryItem(props) {
 
+
   return (
     <PageHeader>
         <Pagehead>
-    <PageHeader.TitleArea>
     <Box sx={{display: 'flex'}}>
         <Box sx={{pr: 3}}> 
         <Link href="https://github.com">
@@ -21,14 +22,13 @@ export default function RepositoryItem(props) {
             (<Label variant="secondary">Public</Label>)
             }
         </Box>
-        <Box sx={{pr: 3, mt: 1 }}>
+        <Box sx={{pr: 3, mt: 1}}>
         <Button>
         <StarIcon size={16}/> 
         <Text sx={{fontSize: 1, fontWeight: 'bold'}}> Star</Text>
         </Button>
         </Box>
     </Box>
-    </PageHeader.TitleArea>
     <PageHeader.Description>
         <Text sx={{fontSize: 1, color: 'fg.muted'}}>
         Forked from facebook/react
@@ -43,8 +43,8 @@ export default function RepositoryItem(props) {
     <Box
         borderWidth="1px"
         borderStyle="solid"
-        bg={"#ffd78e"}
-        borderColor={"#ffd78e"}
+        bg={colors[props.repo.language]}
+        borderColor={colors[props.repo.language]}
         width={10}
         height={10}
         borderRadius={10}
