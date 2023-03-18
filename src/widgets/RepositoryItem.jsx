@@ -1,7 +1,7 @@
 import { Pagehead, Text, Link, Box, Label, Button } from '@primer/react';
 import { PageHeader } from '@primer/react/drafts'
 import { StarIcon } from '@primer/octicons-react';
-import colors from '../data/github-lang-colors';
+import colors from '../data/githubLangColors';
 import moment from "moment";
 
 
@@ -33,7 +33,7 @@ export default function RepositoryItem(props) {
     </Box>
     <PageHeader.Description>
         <Text sx={{fontSize: 1, color: 'fg.muted'}}>
-            {props.repo.fork == true ? "Forked from " + props.repo.name : null }
+            {props.repo.fork === true ? "Forked from " + props.repo.name : null }
         </Text>
     </PageHeader.Description>
     <PageHeader.Description>
