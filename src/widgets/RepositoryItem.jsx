@@ -2,10 +2,12 @@ import { Pagehead, Text, Link, Box, Label, Button } from '@primer/react';
 import { PageHeader } from '@primer/react/drafts'
 import { StarIcon } from '@primer/octicons-react';
 import colors from '../data/github-lang-colors';
+import moment from "moment";
 
 
 export default function RepositoryItem(props) {
 
+  const updated_at = moment(props.repo.updated_at).format("MMM Do, YYYY");
 
   return (
     <PageHeader>
@@ -31,7 +33,7 @@ export default function RepositoryItem(props) {
     </Box>
     <PageHeader.Description>
         <Text sx={{fontSize: 1, color: 'fg.muted'}}>
-        Forked from facebook/react
+            {props.repo.fork == true ? "Forked from " + props.repo.name : null }
         </Text>
     </PageHeader.Description>
     <PageHeader.Description>
@@ -53,7 +55,7 @@ export default function RepositoryItem(props) {
         {props.repo.language} 
         </Text>
         <Text sx={{fontSize: 1, color: 'fg.muted'}}>
-        updated at {props.repo.updated_at} 
+        updated on {updated_at} 
         </Text>
     </PageHeader.Description>
     </Pagehead>
