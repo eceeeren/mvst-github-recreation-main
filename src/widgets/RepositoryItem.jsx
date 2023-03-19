@@ -11,7 +11,7 @@ export default function RepositoryItem(props) {
 
   return (
     <PageHeader>
-        <Pagehead>
+        <Pagehead sx={{pt: 1, pb: 2}}>
     <Box sx={{display: 'flex'}}>
         <Box sx={{pr: 3}}> 
         <Link href="https://github.com">
@@ -24,7 +24,7 @@ export default function RepositoryItem(props) {
             (<Label variant="secondary">Public</Label>)
             }
         </Box>
-        <Box sx={{pr: 3, mt: 1}}>
+        <Box sx={{ mt: 1}}>
         <Button>
         <StarIcon size={16}/> 
         <Text sx={{fontSize: 1, fontWeight: 'bold'}}> Star</Text>

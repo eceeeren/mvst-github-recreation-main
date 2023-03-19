@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RepositoryItem from '../widgets/RepositoryItem';
-import { TextInput, Box, Button, Text } from '@primer/react';
+import { TextInput, Box, Button, Text, Pagehead } from '@primer/react';
 import SpecializedSelectPanel from '../widgets/SpecializedSelectPanel';
 import { RepoIcon } from '@primer/octicons-react';
 import { typeItems, languageItems } from "../data/dropdownItems";
@@ -35,6 +35,7 @@ export default function RepositoryList(props) {
 
   return (
     <>
+    <Pagehead sx={{pt: 0, pb: 3}}>
     <Box sx={{display: 'flex'}}>
     <Box sx={{pr: 3, flexGrow: 1 }}>
     <TextInput 
@@ -56,6 +57,7 @@ export default function RepositoryList(props) {
     </Button>
     </Box>
     </Box>
+    </Pagehead>
     {filterList.map((repo) => (
       <RepositoryItem key={repo.name} repo={repo} />
     ))}
