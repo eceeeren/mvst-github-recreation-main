@@ -10,9 +10,11 @@ import {
 import axios from "axios";
 
 export default function ProfileCard() {
-
+  
   const username = "eceeeren";
-  const [avatarUrl, setAvatarUrl] = useState("https://avatars.githubusercontent.com/primer");
+  const default_avatar = "https://avatars.githubusercontent.com/primer";
+  
+  const [avatarUrl, setAvatarUrl] = useState(default_avatar);
   const [fullName, setFullName] = useState("");
   const [following, setFollowing] = useState(0);
   const [followers, setFollowers] = useState(0);
@@ -53,8 +55,8 @@ export default function ProfileCard() {
     </Pagehead>
     <Heading sx={{fontSize: 3, mb: 2}}>Organizations</Heading>
     <Box sx={{pr: 3, display: 'flex' }}>
-    <Avatar sx={{mr: 1}} square src="https://avatars.githubusercontent.com/primer" />
-    <Avatar square src="https://avatars.githubusercontent.com/primer" />
+    <Avatar sx={{mr: 1}} square src={default_avatar} />
+    <Avatar square src={default_avatar} />
     </Box>
     </>
   );
