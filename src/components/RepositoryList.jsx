@@ -12,8 +12,9 @@ export default function RepositoryList(props) {
 
   useEffect(() => {
     try {
-      setRepos(props.repos);
-      setFilterList(props.repos);
+      const repos = props.repos.sort((a, b) => (b.updated_at > a.updated_at) ? 1 : -1)
+      setRepos(repos);
+      setFilterList(repos);
     } catch (err) {
       console.log(err);
     }

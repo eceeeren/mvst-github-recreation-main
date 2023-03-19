@@ -25,10 +25,10 @@ export default function Homepage() {
 
   return (
     <PageLayout padding="none" rowGap="none" columnGap="none">
-    <PageLayout.Pane position="start" hidden={{narrow: true}}>
+    <PageLayout.Pane position="start" hidden={{narrow: true}} sx={{m:5}}>
         <ProfileCard/>
     </PageLayout.Pane>
-    <PageLayout.Content sx={{ml:5}}>
+    <PageLayout.Content sx={{ml:5, mr:5, mt:3}}>
         <SpecializedUnderlineNav size={repos.length} />
         <RepositoryList repos={repos} />
     </PageLayout.Content>

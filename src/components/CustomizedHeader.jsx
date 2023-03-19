@@ -8,7 +8,7 @@ import {
 
 export default function CustomizedHeader() {
   return (
-    <Header sx={{mb: 3}}>
+    <Header>
   <Header.Item>
     <Header.Link href="#" fontSize={2}>
     <StyledOcticon icon={MarkGithubIcon} size={32} sx={{mr: 2}} />
