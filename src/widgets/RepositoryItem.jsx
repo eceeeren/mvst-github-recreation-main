@@ -18,7 +18,7 @@ export default function RepositoryItem(props) {
         <PageHeader.Title>{props.repo.name}</PageHeader.Title>
         </Link>
         </Box> 
-        <Box sx={{pr: 3, mt: 1 }}>
+        <Box sx={{pr: 3, mt: 1, mr: "auto" }} >
             {props.private ? 
             (<Label variant="secondary">Private</Label>) : 
             (<Label variant="secondary">Public</Label>)
