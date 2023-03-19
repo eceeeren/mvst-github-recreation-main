@@ -5,6 +5,10 @@ import {
   PlusIcon, 
   TriangleDownIcon } from '@primer/octicons-react';
 
+  /**
+   * CustomizedHeader component to render primer-react's Header component in Github style.
+   * @returns 
+   */
 
 export default function CustomizedHeader() {
   return (

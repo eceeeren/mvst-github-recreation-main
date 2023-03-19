@@ -2,6 +2,11 @@ import { SelectPanel, Button } from '@primer/react';
 import React from 'react';
 import { TriangleDownIcon } from '@primer/octicons-react';
 
+  /**
+   * SpecializedSelectPanel component to render primer-react's SelectPanel component in Github style.
+   * The component is used to filter listed repositories with different attributes (not functional).
+   * @returns 
+   */
 
 export default function SpecializedSelectPanel(props) {
 

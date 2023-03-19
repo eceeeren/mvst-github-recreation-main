@@ -1,6 +1,11 @@
 import { UnderlineNav } from '@primer/react/drafts';
 import { BookIcon, RepoIcon, ProjectIcon } from '@primer/octicons-react';
 
+  /**
+   * SpecializedUnderlineNav component to render primer-react's UnderlineNav component in Github style.
+   * @returns 
+   */
+
 export default function SpecializedUnderlineNav(props) {
   return (
      <UnderlineNav aria-label="Repository" sx={{ mb:3 }}>

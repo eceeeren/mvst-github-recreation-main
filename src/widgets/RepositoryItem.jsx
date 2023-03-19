@@ -4,6 +4,10 @@ import { StarIcon } from '@primer/octicons-react';
 import colors from '../data/githubLangColors';
 import moment from "moment";
 
+  /**
+   * RepositoryItem component to return one repository's values and show them in sections.
+   * @returns 
+   */
 
 export default function RepositoryItem(props) {
 

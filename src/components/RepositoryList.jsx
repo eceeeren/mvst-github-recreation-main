@@ -5,6 +5,11 @@ import SpecializedSelectPanel from '../widgets/SpecializedSelectPanel';
 import { RepoIcon } from '@primer/octicons-react';
 import { typeItems, languageItems } from "../data/dropdownItems";
 
+  /**
+   * RepositoryList component to get a specified user's all repositories and direct them to RepositoryItem components.
+   * @returns 
+   */
+
 export default function RepositoryList(props) {
 
   const [repos, setRepos] = useState([]);

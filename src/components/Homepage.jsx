@@ -5,6 +5,11 @@ import RepositoryList from './RepositoryList';
 import SpecializedUnderlineNav from './SpecializedUnderlineNav';
 import axios from "axios";
 
+  /**
+   * Homepage component to bring ProfileCard, SpecializedUnderlineNav and RepositoryList components together.
+   * @returns 
+   */
+
 
 export default function Homepage() {
 

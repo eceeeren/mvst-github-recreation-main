@@ -9,6 +9,12 @@ import {
 } from '@primer/octicons-react';
 import axios from "axios";
 
+  /**
+   * ProfileCard component to get and return a specified user's data.
+   * @returns 
+   */
+
+
 export default function ProfileCard() {
   
   const username = "eceeeren";
