@@ -35,6 +35,8 @@ Launches the code documentation.
 - Launching the application in TypeScript
 - Fixing testing bugs
 - Extending the code documentation
+- Improving the responsiveness of the application
+- Adding new functionalities
 
 ## Project Feedback
 
